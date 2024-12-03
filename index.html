@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Redwan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="#">
+</head>
+<body>
+    <!-- Video Container -->
+    <div class="video-container">
+        <video id="bg-video" autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <section class="banner">
+        <header>
+            <a href="#" class="logo"> PW <span> Security </span></a>
+            <div class="toggle"></div>
+        </header>
+        <img src="2.png" alt="" class="boy">
+        <div class="content">
+            <div class="contentBx">
+                <h4>As-salamu alaikum ... Hello,</h4>
+                <h2>I'm <span>Muhammad Redwan</span></h2>
+                <h3>CyberSecurity Expert | Web Designer</h3>
+                <p>Welcome to my website, where creativity meets code to build transformative
+                    digital experiences that push the boundaries of technology and shape the future
+                    of innovation.</p>
+                <a href="https://www.facebook.com/professorrehan">Hire Me</a>
+                <a href="https://drive.usercontent.google.com/download?id=1dpFJeS9YUwdsHsG46Be_SvWYo7cq65U4&export=download&authuser=0">Download CV</a>
+            </div>
+        </div>
+        <ul class="sci">
+            <li><a href="https://www.linkedin.com/in/redwannhossain"><img src="linkedin.png" width="40"></a></li>
+            <li><a href="https://www.instagram.com/professorrehan/"><img src="insta.png"
+                        width="40"></a></li>
+            <li><a href="https://www.threads.net/@professorrehan"><img src="threads.png" width="40"></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="404.html">About</a></li>
+            <li><a href="404.html">Services</a></li>
+            <li><a href="404.html">Word</a></li>
+            <li><a href="https://www.facebook.com/professorrehan">Contact</a></li>
+        </ul>
+    </section>
+
+    <script>
+        let banner = document.querySelector('.banner');
+        let menuToggle = document.querySelector('.toggle');
+
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active');
+            banner.classList.toggle('active');
+        }
+
+                // Scroll-controlled video playback
+                document.addEventListener("DOMContentLoaded", () => {
+            const video = document.querySelector("#bg-video");
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            let requestId = null;
+
+            const smoothUpdate = () => {
+                const scrollPosition = window.scrollY;
+                const scrollFraction = scrollPosition / maxScroll;
+                const videoTime = scrollFraction * video.duration;
+
+                video.currentTime = videoTime;
+                requestId = null; // Reset requestId to allow new requests
+            };
+
+            const handleScroll = () => {
+                // Use requestAnimationFrame for smoother updates
+                if (!requestId) {
+                    requestId = requestAnimationFrame(smoothUpdate);
+                }
+            };
+
+            video.addEventListener("loadedmetadata", () => {
+                window.addEventListener("scroll", handleScroll);
+            });
+        });
+    </script>
+    
+</body>
+</html>
